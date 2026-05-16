@@ -2,40 +2,50 @@
 # Dependencies
 # ========================
 node_modules/
+jspm_packages/
+web_modules/
+bower_components/
 .pnp
+.pnp.*
 .pnp.js
 
 # ========================
-# Environment / Secrets
+# Environment / Secrets — NEVER commit these
 # ========================
-# IMPORTANT: Never commit .env files — they contain passwords and API keys
 .env
-.env.local
-.env.development.local
-.env.test.local
-.env.production.local
+.env.*
+!.env.example
 
 # ========================
 # Build output
 # ========================
-dist/
+dist
 dist-ssr/
 build/
-out/
+build/Release
+out
+.output
+.next
+.nuxt
 
 # ========================
 # Logs
 # ========================
-logs/
+logs
 *.log
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
 pnpm-debug.log*
+lerna-debug.log*
 
 # ========================
-# OS junk files
+# Runtime / OS junk
 # ========================
+pids
+*.pid
+*.seed
+*.pid.lock
 .DS_Store
 .DS_Store?
 ._*
@@ -46,11 +56,52 @@ Thumbs.db
 desktop.ini
 
 # ========================
-# Editor / IDE files
+# Test & Coverage
+# ========================
+coverage
+*.lcov
+.nyc_output
+lib-cov
+
+# ========================
+# Cache & temp files
+# ========================
+.cache
+.cache/
+.parcel-cache
+.npm
+.eslintcache
+.stylelintcache
+.node_repl_history
+.grunt
+.lock-wscript
+.tern-port
+*.tsbuildinfo
+*.tgz
+*.local
+.yarn-integrity
+.firebase/
+.dynamodb/
+.serverless/
+.fusebox/
+.svelte-kit/
+.vuepress/dist
+.temp
+.docusaurus
+**/.vitepress/dist
+**/.vitepress/cache
+vite.config.js.timestamp-*
+vite.config.ts.timestamp-*
+.vite/
+report.[0-9]*.[0-9]*.[0-9]*.[0-9]*.json
+
+# ========================
+# Editor / IDE
 # ========================
 .vscode/*
 !.vscode/extensions.json
 .idea/
+.vscode-test
 *.suo
 *.ntvs*
 *.njsproj
@@ -58,12 +109,12 @@ desktop.ini
 *.sw?
 
 # ========================
-# Testing
+# Yarn v3 / pnpm
 # ========================
-coverage/
-
-# ========================
-# Misc
-# ========================
-*.local
-.cache/
+.pnpm-store
+.yarn/*
+!.yarn/patches
+!.yarn/plugins
+!.yarn/releases
+!.yarn/sdks
+!.yarn/versions
